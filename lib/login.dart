@@ -5,20 +5,24 @@ class Login extends StatelessWidget{
    const Login ({Key? key}) : super (key : key);
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-     body: Center(
-        child: Container(
-           decoration: BoxDecoration(
+    return Container(
+       decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.center,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [
                 Color.fromRGBO(239, 241, 242, 1),
                 Color.fromRGBO(47, 176, 249, 0.39),
-                Color.fromRGBO(160, 174, 181, 0),
+               // Color.fromRGBO(160, 174, 181, 0),
               ]
             )
             ),
+    child:Scaffold(
+      
+      backgroundColor: Colors.transparent,
+     body: Center(
+        child: Container(
+          
             //  padding: EdgeInsets.symmetric(horizontal: 10),
         child: ListView(
          // crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +46,7 @@ class Login extends StatelessWidget{
               Container(
                 alignment: Alignment.centerLeft,
                 padding: EdgeInsets.symmetric(horizontal: 65),
-              child: Text("Email Address", style: GoogleFonts.comicNeue(fontSize: 20, fontWeight: FontWeight.w400),),
+              child: Text("Alamat Email", style: GoogleFonts.comicNeue(fontSize: 20, fontWeight: FontWeight.w400),),
               ),
             ]
            ),
@@ -65,6 +69,8 @@ class Login extends StatelessWidget{
              child: TextField(
               decoration: InputDecoration( 
                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                 contentPadding:
+                      EdgeInsets.only(left: 8, bottom: 5, top: 0.0, right: 0),
                 ),
              ),
             )
@@ -85,7 +91,7 @@ class Login extends StatelessWidget{
               Container(
                 alignment: Alignment.centerLeft,
                 padding: EdgeInsets.symmetric(horizontal: 65),
-              child: Text("Password", style: GoogleFonts.comicNeue(fontSize: 20, fontWeight: FontWeight.w400),),
+              child: Text("Kata Sandi", style: GoogleFonts.comicNeue(fontSize: 20, fontWeight: FontWeight.w400),),
               ),
             ]
            ),
@@ -100,14 +106,18 @@ class Login extends StatelessWidget{
                 Icons.lock,
                 color: Colors.black,
                 size: 40,
+                
               ),
                    SizedBox(width: 6) ,
             new SizedBox(
               width: 261,
               height: 40,
              child: TextField(
+              
               decoration: InputDecoration( 
                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                 contentPadding:
+                      EdgeInsets.only(left: 8, bottom: 5, top: 0.0, right: 0),
                 ),
              ),
             )
@@ -137,7 +147,7 @@ class Login extends StatelessWidget{
                             borderRadius: BorderRadius.circular(20),
                           )
                         ),
-                        child: Text("LOGIN", style: GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1)),textAlign: TextAlign.center,),
+                        child: Text("MASUK", style: GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1)),textAlign: TextAlign.center,),
                       ),
                 ),
                 SizedBox(height: 24),
@@ -147,11 +157,11 @@ class Login extends StatelessWidget{
                     Container(
                       child: Row(
                         children: [
-                          Text("Have an account?", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20), textAlign: TextAlign.center,),
+                          Text("Belum punya akun?", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20), textAlign: TextAlign.center,),
                           TextButton(
                             onPressed: () {
                              Navigator.pushNamed(context, '/Signup');
-                          },child:Text("Sign Up", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20, color: Color.fromRGBO(255, 255, 255, 1)),textAlign: TextAlign.center, ),),
+                          },child:Text("Daftar", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20, color: Color.fromRGBO(255, 255, 255, 1)),textAlign: TextAlign.center, ),),
                         ],)
                     )
                   ],
@@ -170,13 +180,14 @@ class Login extends StatelessWidget{
                           }, 
                           icon: const Icon(Icons.arrow_back_ios_new,),
                           iconSize: 20,
+                          color: Colors.white,
                           
                           ),
                           
                           TextButton(
                             onPressed: () {
                              Navigator.pushNamed(context, '/');
-                          },child:Text("Back", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20, color: Color.fromRGBO(0, 0, 0, 1)),textAlign: TextAlign.center, ),),
+                          },child:Text("Back", style:GoogleFonts.comicNeue(fontWeight: FontWeight.w400, fontSize:20, color: Color.fromRGBO(255, 255, 255, 1)),textAlign: TextAlign.center, ),),
                           // Text("Back", style: GoogleFonts.comicNeue(fontWeight:FontWeight.w400, fontSize: 28, color: Color.fromRGBO(3, 3, 3, 1)),),
                         ],)
                     )
@@ -188,6 +199,7 @@ class Login extends StatelessWidget{
         ),
       )
      )
+    ),
     );
 
   }
